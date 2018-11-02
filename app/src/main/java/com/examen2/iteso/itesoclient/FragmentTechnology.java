@@ -67,7 +67,6 @@ public class FragmentTechnology extends Fragment {
     static final String PROVIDER_NAME = "com.iteso.pdm18_scrollabletabs";
     static final int PRODUCTS_BY_CATEGORY = 1;
 
-
     private void getTechnology(){
         ContentResolver resolver = getContext().getContentResolver();
         Uri uri = Uri.parse("content://" + PROVIDER_NAME + "/products/category/" + PRODUCTS_BY_CATEGORY);
