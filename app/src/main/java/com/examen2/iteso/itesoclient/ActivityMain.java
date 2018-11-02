@@ -73,7 +73,7 @@ public class ActivityMain extends AppCompatActivity {
                 case Constant.FRAGMENT_HOME:
                     return getString(R.string.section2);
                 case Constant.FRAGMENT_ELECTRONICS:
-                    return getString(R.string.section2);
+                    return getString(R.string.section3);
             }
             return null;
         }
