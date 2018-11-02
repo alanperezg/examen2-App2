@@ -1,5 +1,6 @@
 package com.examen2.iteso.itesoclient;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.examen2.iteso.itesoclient.tools.Constant;
 
@@ -32,6 +35,23 @@ public class ActivityMain extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item_products, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.menu_refresh){
+            Intent intent = new Intent(ActivityMain.this, ActivityMain.class);
+            startActivity(intent);
+            finish();
+        }
+        return true;
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter{
